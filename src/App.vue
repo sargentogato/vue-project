@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <fhater-component />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import fhaterComponent from "./components/Padre.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    fhaterComponent,
   },
 };
 </script>
