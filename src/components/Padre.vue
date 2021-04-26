@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h2>Soy el componente padre</h2>
+
     <child-component />
   </div>
 </template>

@@ -2,7 +2,8 @@
   <div>
     <div class="box" v-for="value in values" v-bind:key="value.message">
       <p>{{ value.message }}</p>
-      <button class="btn" @click="value.counter++">{{ value.counter }}</button>
+      <!-- <button class="btn" @click="value.counter++">{{ value.counter }}</button> -->
+      <button class="btn" v-on:click="count(value)">{{ value.counter }}</button>
     </div>
   </div>
 </template>
@@ -18,6 +19,11 @@ export default {
         { message: "item 3", counter: 0 },
       ],
     };
+  },
+  methods: {
+    count(value) {
+      value.counter++;
+    },
   },
 };
 </script>
