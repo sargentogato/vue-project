@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div class="box" v-for="value in values" v-bind:key="value.message">
-      <p>{{ value.message }}</p>
-      <!-- <button class="btn" @click="value.counter++">{{ value.counter }}</button> -->
-      <button class="btn" v-on:click="count(value)">{{ value.counter }}</button>
+    <div class="box">
+      <p>{{ messageFromFather.message }}</p>
+      <button class="btn" v-on:click="count(messageFromFather)">
+        {{ messageFromFather.counter }}
+      </button>
     </div>
   </div>
 </template>
@@ -11,15 +12,7 @@
 <script>
 export default {
   name: "childComponent",
-  data: function () {
-    return {
-      values: [
-        { message: "item 1", counter: 0 },
-        { message: "item 2", counter: 0 },
-        { message: "item 3", counter: 0 },
-      ],
-    };
-  },
+  props: ["messageFromFather"],
   methods: {
     count(value) {
       value.counter++;
@@ -33,6 +26,7 @@ export default {
   margin-block-end: 1rem;
   border: #0ed40e 3px solid;
 }
+
 .box {
   flex-basis: 100%;
   padding: 0.5rem 7rem;
